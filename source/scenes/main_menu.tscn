@@ -26,18 +26,25 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1148968, 0.11489681, 0.1148968, 1)
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+[node name="AspectRatioContainer3" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -243.0
-offset_top = 57.0
+offset_top = -196.5
 offset_right = 243.0
-offset_bottom = 252.0
+offset_bottom = 196.5
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
 
-[node name="title" type="Label" parent="AspectRatioContainer"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="AspectRatioContainer3"]
+layout_mode = 2
+
+[node name="title" type="Label" parent="AspectRatioContainer3/AspectRatioContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 80
@@ -47,40 +54,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -159.0
-offset_top = -329.0
-offset_right = 159.0
-offset_bottom = -135.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="AspectRatioContainer3"]
+layout_mode = 2
 
-[node name="button_container" type="VBoxContainer" parent="AspectRatioContainer2"]
+[node name="button_container" type="VBoxContainer" parent="AspectRatioContainer3/AspectRatioContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="button_continue" type="Button" parent="AspectRatioContainer2/button_container"]
+[node name="button_continue" type="Button" parent="AspectRatioContainer3/AspectRatioContainer2/button_container"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "oyuna devam et"
 
-[node name="button_new_game" type="Button" parent="AspectRatioContainer2/button_container"]
+[node name="button_new_game" type="Button" parent="AspectRatioContainer3/AspectRatioContainer2/button_container"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
 text = "yeni oyuna başla"
 
-[node name="button_settings" type="Button" parent="AspectRatioContainer2/button_container"]
+[node name="button_settings" type="Button" parent="AspectRatioContainer3/AspectRatioContainer2/button_container"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
@@ -88,7 +84,7 @@ theme_override_font_sizes/font_size = 30
 text = "ayarlar"
 script = SubResource("GDScript_l6cm7")
 
-[node name="button_exit" type="Button" parent="AspectRatioContainer2/button_container"]
+[node name="button_exit" type="Button" parent="AspectRatioContainer3/AspectRatioContainer2/button_container"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
