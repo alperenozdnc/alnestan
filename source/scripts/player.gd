@@ -27,6 +27,8 @@ var move_speed: float = 0.0;
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
+	capture_mouse()
+
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
 
