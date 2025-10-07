@@ -2,19 +2,24 @@ extends Control
 
 
 func _ready() -> void:
-	_watch_button_clicks();
+	var button_actions = [
+		[%button_continue, _continue_game],
+		[%button_new_game, _start_new_game],
+		[%button_settings, _show_settings],
+		[%button_exit, _exit_game]
+	];
+
+	for n in range(button_actions.size()):
+		var button = button_actions[n][0];
+		var action = button_actions[n][1];
+
+		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+		button.mouse_entered.connect(_hover_action);	
+		button.pressed.connect(action);	
 
 
-func _watch_button_clicks() -> void:
-	var continue_button = %button_continue;
-	var new_game_button = %button_new_game;
-	var settings_button = %button_settings;
-	var exit_button = %button_exit;
-
-	continue_button.pressed.connect(_continue_game);
-	new_game_button.pressed.connect(_start_new_game);
-	settings_button.pressed.connect(_show_settings);
-	exit_button.pressed.connect(_exit_game);
+func _hover_action() -> void:
+	%hover_sound.play();
 
 
 func _continue_game() -> void:
