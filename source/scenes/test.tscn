@@ -29,7 +29,7 @@ height = 1.8
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
 albedo_color = Color(0.14600104, 0.11410677, 0.047347426, 1)
 
-[node name="main" type="Node3D"]
+[node name="test" type="Node3D"]
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sugp2")

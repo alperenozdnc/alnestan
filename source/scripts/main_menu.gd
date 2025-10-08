@@ -24,7 +24,7 @@ func _hover_action() -> void:
 func _continue_game() -> void:
 	$transition_screen.transition();
 	await $transition_screen.transitioned;
-	scene_handler.switch_scene("res://scenes/main.tscn");
+	scene_handler.switch_scene("res://scenes/test.tscn");
 
 
 func _start_new_game() -> void:
