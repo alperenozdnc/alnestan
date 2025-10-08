@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready() -> void:
 	var button_actions = [
 		[%button_continue, _continue_game],
@@ -23,14 +22,18 @@ func _hover_action() -> void:
 
 
 func _continue_game() -> void:
+	$transition_screen.transition();
+	await $transition_screen.transitioned;
 	get_tree().change_scene_to_file("res://scenes/main.tscn");
 
 
 func _start_new_game() -> void:
+	$transition_screen.transition();
 	get_tree().change_scene_to_file("res://scenes/main.tscn");
 
 	
 func _show_settings() -> void:
+	$transition_screen.transition();
 	print("showing settings...");
 
 
