@@ -24,12 +24,13 @@ func _hover_action() -> void:
 func _continue_game() -> void:
 	$transition_screen.transition();
 	await $transition_screen.transitioned;
-	get_tree().change_scene_to_file("res://scenes/main.tscn");
+	scene_handler.switch_scene("res://scenes/main.tscn");
 
 
 func _start_new_game() -> void:
 	$transition_screen.transition();
-	get_tree().change_scene_to_file("res://scenes/main.tscn");
+	await $transition_screen.transitioned;
+	scene_handler.switch_scene("res://scenes/main.tscn");
 
 	
 func _show_settings() -> void:
