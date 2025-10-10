@@ -7,7 +7,7 @@ var can_sprint : bool = false
 
 var look_speed : float = 0.002
 var base_speed : float = 5.85
-var jump_velocity : float = 4.5
+var jump_velocity : float = 3.5
 var sprint_speed : float = 10.0
 
 var keys = {
