@@ -36,7 +36,7 @@ func _start_new_game() -> void:
 
 	
 func _show_settings() -> void:
-	$transition_screen.transition();
+	alnestan.transition();
 
 
 func _exit_game() -> void:
