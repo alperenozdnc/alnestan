@@ -14,3 +14,6 @@ func play_sound(filename: String):
 
 	self.stream = load(path);
 	self.play();
+
+func stop_sound():
+	self.stream_paused = true;
