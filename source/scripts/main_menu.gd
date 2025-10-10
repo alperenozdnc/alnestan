@@ -18,8 +18,7 @@ func _ready() -> void:
 
 
 func _hover_action() -> void:
-	%hover_sound.play();
-
+	alnestan.audio.play_sound("paper");
 
 func _continue_game() -> void:
 	alnestan.transitioner.transition();
