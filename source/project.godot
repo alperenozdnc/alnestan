@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Detective Game"
-run/main_scene="uid://qh7qnm5nbd6v"
+run/main_scene="uid://djpytwi48f142"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-scene_handler="*res://scripts/scene_handler.gd"
+alnestan="*res://scripts/global.gd"
 
 [input]
 

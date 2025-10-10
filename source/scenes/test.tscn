@@ -42,7 +42,7 @@ shadow_enabled = true
 script = ExtResource("2_0wfyh")
 
 [node name="Mesh" type="MeshInstance3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.9, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.3, 2)
 material_override = SubResource("StandardMaterial3D_sugp2")
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_jyhfs")

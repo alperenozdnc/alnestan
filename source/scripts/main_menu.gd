@@ -22,20 +22,21 @@ func _hover_action() -> void:
 
 
 func _continue_game() -> void:
-	$transition_screen.transition();
-	await $transition_screen.transitioned;
-	scene_handler.switch_scene("res://scenes/test.tscn");
+	alnestan.transitioner.transition();
+	await alnestan.transitioner.transitioned;
+
+	alnestan.scenes.load_scene("test", "3d");
 
 
 func _start_new_game() -> void:
-	$transition_screen.transition();
-	await $transition_screen.transitioned;
-	scene_handler.switch_scene("res://scenes/main.tscn");
+	alnestan.transitioner.transition();
+	await alnestan.transitioner.transitioned;
+
+	alnestan.scenes.load_scene("test", "3d");
 
 	
 func _show_settings() -> void:
 	$transition_screen.transition();
-	print("showing settings...");
 
 
 func _exit_game() -> void:

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://djpytwi48f142"]
+
+[ext_resource type="Script" uid="uid://dm2te1g326kp6" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://n7vqudooh0ll" path="res://scenes/transition_screen.tscn" id="2_0wfyh"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_o5qli")
+
+[node name="gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="world_3d" type="Node3D" parent="."]
+
+[node name="world_2d" type="Node2D" parent="."]
+
+[node name="transition_screen" parent="." instance=ExtResource("2_0wfyh")]
