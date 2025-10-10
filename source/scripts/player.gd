@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
-var can_move : bool = true
-var has_gravity : bool = true
-var can_jump : bool = true
-var can_sprint : bool = false
+var can_move : bool = true;
+var has_gravity : bool = true;
+var can_jump : bool = true;
+var can_sprint : bool = true;
 
-var look_speed : float = 0.002
-var base_speed : float = 5.85
-var jump_velocity : float = 3.5
-var sprint_speed : float = 10.0
+var look_speed : float = 0.002;
+var base_speed : float = 5.85;
+var jump_velocity : float = 3.5;
+var sprint_speed : float = 8;
 
 var keys = {
 	"left": "move_left",
@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 			keys["left"],
 			keys["right"],
 			keys["forward"],
-			keys["back"])
+			keys["back"],
+		);
 
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
 
