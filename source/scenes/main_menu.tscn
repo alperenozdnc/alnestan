@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qh7qnm5nbd6v"]
+[gd_scene load_steps=10 format=3 uid="uid://qh7qnm5nbd6v"]
 
 [ext_resource type="Script" uid="uid://bhkautgt4ihw0" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://bowvcgjw7deaj" path="res://fonts/typewriter.ttf" id="1_l6cm7"]
@@ -19,11 +19,6 @@ func _ready() -> void:
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ln24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtw2f"]
-
-[sub_resource type="GDScript" id="GDScript_l6cm7"]
-
-[sub_resource type="GDScript" id="GDScript_ekxnf"]
-resource_name = "exit_game"
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -174,7 +169,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ln24")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
 text = "ayarlar"
 alignment = 0
-script = SubResource("GDScript_l6cm7")
 
 [node name="button_exit" type="Button" parent="container/button_container/button_wrapper"]
 unique_name_in_owner = true
@@ -191,4 +185,3 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_8ln24")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rtw2f")
 text = "terk et"
 alignment = 0
-script = SubResource("GDScript_ekxnf")
