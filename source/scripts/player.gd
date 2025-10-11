@@ -92,12 +92,12 @@ func _physics_process(delta: float) -> void:
 		move_speed = sprint_speed;
 
 		if pressed_movement_key_count > 0:
-			alnestan.audio.pitch_scale = sprint_speed/base_speed;	
+			alnestan.audio.set_tempo(sprint_speed/base_speed);
 	else:
 		move_speed = base_speed;
 
 		if pressed_movement_key_count > 0:
-			alnestan.audio.pitch_scale = 1;
+			alnestan.audio.set_tempo();
 	
 	if can_move:
 		var input_dir := Input.get_vector(
