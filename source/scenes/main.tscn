@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://djpytwi48f142"]
+[gd_scene load_steps=5 format=3 uid="uid://djpytwi48f142"]
 
 [ext_resource type="Script" uid="uid://dm2te1g326kp6" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://n7vqudooh0ll" path="res://scenes/transition_screen.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://m62v7nqbf1fj" path="res://scripts/bgm.gd" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://nbudtk1sffi0" path="res://scripts/audio.gd" id="3_sugp2"]
 
 [node name="main" type="Node"]
@@ -20,6 +21,9 @@ grow_vertical = 2
 [node name="world_2d" type="Node2D" parent="."]
 
 [node name="transition_screen" parent="." instance=ExtResource("2_0wfyh")]
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+script = ExtResource("3_jyhfs")
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 script = ExtResource("3_sugp2")
