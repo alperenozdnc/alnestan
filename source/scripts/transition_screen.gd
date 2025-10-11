@@ -17,3 +17,6 @@ func _on_animation_player_animation_finished(anim_name):
 		$animation_player.play("fade_to_normal");
 	if anim_name == "fade_to_normal":
 		$color_rect.visible = false;
+
+func is_hidden() -> bool:
+	return not $color_rect.visible;
