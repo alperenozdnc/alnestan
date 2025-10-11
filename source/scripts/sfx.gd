@@ -6,7 +6,7 @@ func _ready() -> void:
 	alnestan.audio.sfx = self;
 
 func play_stream(filename: String):
-	var path := "res://sounds/%s.mp3" % filename;
+	var path := "res://sounds/sfx/%s.mp3" % filename;
 
 	if not ResourceLoader.exists(path):
 		push_error("%s sound file does not exist on disk", path);
