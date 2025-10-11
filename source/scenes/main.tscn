@@ -20,7 +20,7 @@ grow_vertical = 2
 
 [node name="world_2d" type="Node2D" parent="."]
 
-[node name="transition_screen" parent="." instance=ExtResource("2_0wfyh")]
+[node name="transitioner" parent="." instance=ExtResource("2_0wfyh")]
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 script = ExtResource("3_jyhfs")
