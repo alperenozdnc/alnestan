@@ -18,3 +18,7 @@ func play_stream(filename: String):
 
 func stop_stream():
 	self.stream_paused = true;
+
+
+func set_tempo(n: float = 1):
+	self.pitch_scale = n;
