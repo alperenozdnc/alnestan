@@ -78,7 +78,7 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			velocity += get_gravity() * delta;
 	
-	if did_jump_previously and is_on_floor() and pressed_movement_key_count > 0:
+	if did_jump_previously and is_on_floor() and pressed_movement_key_count > 0 and can_move:
 		did_jump_previously = false;
 		alnestan.audio.play_stream("steps");
 
