@@ -1,6 +1,8 @@
 extends Control
 
 func _ready() -> void:
+	alnestan.bgm.play_stream("background");
+
 	var button_actions = [
 		[%button_continue, _continue_game],
 		[%button_new_game, _start_new_game],
@@ -25,6 +27,8 @@ func _default_click_action() -> void:
 
 	alnestan.transitioner.transition();
 	await alnestan.transitioner.transitioned;
+
+	alnestan.bgm.stop_stream();
 	
 
 func _hover_action() -> void:
