@@ -44,7 +44,7 @@ func _start_new_game() -> void:
 
 	
 func _show_settings() -> void:
-	print("settings");
+	alnestan.scenes.load_scene("settings_menu", "gui");
 
 
 func _exit_game() -> void:
