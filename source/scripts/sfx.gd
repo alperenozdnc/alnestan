@@ -1,9 +1,9 @@
-class_name audio_manager extends AudioStreamPlayer
+class_name sfx_node extends AudioStreamPlayer
 
 var current_stream: String;
 
 func _ready() -> void:
-	alnestan.audio = self;
+	alnestan.audio.sfx = self;
 
 func play_stream(filename: String):
 	var path := "res://sounds/%s.mp3" % filename;
@@ -22,3 +22,4 @@ func stop_stream():
 
 func set_tempo(n: float = 1):
 	self.pitch_scale = n;
+

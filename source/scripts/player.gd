@@ -61,14 +61,14 @@ func _input(event: InputEvent) -> void:
 			if is_movement_action:
 				if Input.is_action_just_pressed(curr_action):
 					if pressed_movement_key_count == 0:
-						alnestan.audio.play_stream("steps");
+						alnestan.audio.sfx.play_stream("steps");
 
 					pressed_movement_key_count += 1;
 				elif Input.is_action_just_released(curr_action):
 					pressed_movement_key_count -= 1;
 
 					if pressed_movement_key_count == 0:
-						alnestan.audio.stop_stream();
+						alnestan.audio.sfx.stop_stream();
 
 
 func _physics_process(delta: float) -> void:
@@ -80,24 +80,24 @@ func _physics_process(delta: float) -> void:
 	
 	if did_jump_previously and is_on_floor() and pressed_movement_key_count > 0 and can_move:
 		did_jump_previously = false;
-		alnestan.audio.play_stream("steps");
+		alnestan.audio.sfx.play_stream("steps");
 
 	if can_jump:
 		if Input.is_action_just_pressed(keys["jump"]) and is_on_floor():
 			velocity.y = jump_velocity;
 			did_jump_previously = true;
-			alnestan.audio.stop_stream();
+			alnestan.audio.sfx.stop_stream();
 
 	if can_sprint and Input.is_action_pressed(keys["sprint"]):
 		move_speed = sprint_speed;
 
 		if pressed_movement_key_count > 0:
-			alnestan.audio.set_tempo(sprint_speed/base_speed);
+			alnestan.audio.sfx.set_tempo(sprint_speed/base_speed);
 	else:
 		move_speed = base_speed;
 
 		if pressed_movement_key_count > 0:
-			alnestan.audio.set_tempo();
+			alnestan.audio.sfx.set_tempo();
 	
 	if can_move:
 		var input_dir := Input.get_vector(

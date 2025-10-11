@@ -1,9 +1,9 @@
-class_name bgm_manager extends AudioStreamPlayer
+class_name bgm_node extends AudioStreamPlayer
 
 var current_stream: String;
 
 func _ready() -> void:
-	alnestan.bgm = self;
+	alnestan.audio.bgm = self;
 
 func play_stream(filename: String):
 	var path := "res://sounds/%s.mp3" % filename;
@@ -26,4 +26,3 @@ func stop_stream():
 
 func set_tempo(n: float = 1):
 	self.pitch_scale = n;
-
