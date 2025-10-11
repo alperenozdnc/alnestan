@@ -45,6 +45,9 @@ func _input(event: InputEvent) -> void:
 		rotate_look(event.relative);
 	
 	for i in range(InputMap.get_actions().size()):
+		if not can_move:
+			break;
+
 		var curr_action = InputMap.get_actions()[i];
 
 		if event.is_action(curr_action):
@@ -69,6 +72,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	can_move = alnestan.transitioner.is_hidden();
+
 	if has_gravity:
 		if not is_on_floor():
 			velocity += get_gravity() * delta;
