@@ -10,32 +10,37 @@ func _ready() -> void:
 
 	for n in range(button_actions.size()):
 		var button = button_actions[n][0];
-		var action = button_actions[n][1];
+		var click_action = func():
+			await _default_click_action();
+
+			button_actions[n][1].call();
 
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
 		button.mouse_entered.connect(_hover_action);	
-		button.pressed.connect(action);	
+		button.pressed.connect(click_action);	
 
+
+func _default_click_action() -> void:
+	alnestan.audio.play_stream("click");
+
+	alnestan.transitioner.transition();
+	await alnestan.transitioner.transitioned;
+	
 
 func _hover_action() -> void:
 	alnestan.audio.play_stream("paper");
 
-func _continue_game() -> void:
-	alnestan.transitioner.transition();
-	await alnestan.transitioner.transitioned;
 
+func _continue_game() -> void:
 	alnestan.scenes.load_scene("test", "3d");
 
 
 func _start_new_game() -> void:
-	alnestan.transitioner.transition();
-	await alnestan.transitioner.transitioned;
-
 	alnestan.scenes.load_scene("test", "3d");
 
 	
 func _show_settings() -> void:
-	alnestan.transitioner.transition();
+	print("settings");
 
 
 func _exit_game() -> void:
