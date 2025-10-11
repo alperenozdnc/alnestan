@@ -5,7 +5,7 @@ var current_stream: String;
 func _ready() -> void:
 	alnestan.audio = self;
 
-func play_sound(filename: String):
+func play_stream(filename: String):
 	var path := "res://sounds/%s.mp3" % filename;
 
 	if not ResourceLoader.exists(path):
@@ -16,5 +16,5 @@ func play_sound(filename: String):
 	self.play();
 
 
-func stop_sound():
+func stop_stream():
 	self.stream_paused = true;
