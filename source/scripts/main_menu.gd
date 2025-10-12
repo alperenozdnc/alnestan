@@ -1,7 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	alnestan.audio.bgm.play_stream("background");
+	if !alnestan.audio.bgm.playing:
+		alnestan.audio.bgm.play_stream("background");
 
 	var button_actions = [
 		[%button_continue, _continue_game],
@@ -13,7 +14,7 @@ func _ready() -> void:
 	for n in range(button_actions.size()):
 		var button = button_actions[n][0];
 		var click_action = func():
-			await _default_click_action();
+			await _default_click_action(n != 2);
 
 			button_actions[n][1].call();
 
@@ -22,13 +23,14 @@ func _ready() -> void:
 		button.pressed.connect(click_action);	
 
 
-func _default_click_action() -> void:
+func _default_click_action(stop_music: bool = true) -> void:
 	alnestan.audio.sfx.play_stream("click");
 
 	alnestan.transitioner.transition();
 	await alnestan.transitioner.transitioned;
 
-	alnestan.audio.bgm.stop_stream();
+	if stop_music:
+		alnestan.audio.bgm.stop_stream();
 	
 
 func _hover_action() -> void:

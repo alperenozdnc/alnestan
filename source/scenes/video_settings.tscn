@@ -1,0 +1,173 @@
+[gd_scene load_steps=2 format=3 uid="uid://bct6pl4ehsbdn"]
+
+[ext_resource type="Script" uid="uid://cnwcwg5jik7hc" path="res://scripts/video.gd" id="1_gcgsw"]
+
+[node name="video_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcgsw")
+
+[node name="bg_color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0, 0, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -529.0
+offset_top = 26.0
+offset_right = -366.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Video"
+
+[node name="button_go_back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 43.0
+offset_right = 1097.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Geri"
+
+[node name="brightness" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="master" type="HSlider" parent="brightness"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 433.68002
+offset_top = 204.59998
+offset_right = 830.2062
+offset_bottom = 220.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = 0.01
+max_value = 4.0
+step = 0.1
+value = 1.01
+
+[node name="label" type="Label" parent="brightness"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 402.0
+offset_bottom = 234.0
+text = "Parlaklik"
+
+[node name="window_size" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="label2" type="Label" parent="window_size"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 260.0
+offset_right = 482.0
+offset_bottom = 283.0
+text = "Pencere Boyutu"
+
+[node name="window_size" type="OptionButton" parent="window_size"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 531.0
+offset_top = 255.0
+offset_right = 645.0
+offset_bottom = 286.0
+selected = 0
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "1280x720"
+popup/item_1/id = 1
+popup/item_2/text = "1024x768"
+popup/item_2/id = 2
+popup/item_3/text = "800x600"
+popup/item_3/id = 3
+
+[node name="fullscreen_or_windowed" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 53.0
+offset_right = 40.0
+offset_bottom = 93.0
+
+[node name="label2" type="Label" parent="fullscreen_or_windowed"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 260.0
+offset_right = 482.0
+offset_bottom = 283.0
+text = "Ekran"
+
+[node name="fullscreen_or_windowed" type="OptionButton" parent="fullscreen_or_windowed"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 530.0
+offset_top = 254.0
+offset_right = 645.0
+offset_bottom = 285.0
+selected = 0
+item_count = 2
+popup/item_0/text = "Tam ekran"
+popup/item_0/id = 0
+popup/item_1/text = "Pencere"
+popup/item_1/id = 1
+
+[node name="graphics_quality" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 108.0
+offset_right = 40.0
+offset_bottom = 148.0
+
+[node name="label2" type="Label" parent="graphics_quality"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 260.0
+offset_right = 482.0
+offset_bottom = 283.0
+text = "Grafik kalitesi"
+
+[node name="OptionButton" type="OptionButton" parent="graphics_quality"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 255.0
+offset_right = 645.0
+offset_bottom = 286.0
+selected = 1
+item_count = 5
+popup/item_0/text = "Cok yuksek"
+popup/item_0/id = 4
+popup/item_1/text = "Yuksek"
+popup/item_1/id = 0
+popup/item_2/text = "Orta"
+popup/item_2/id = 1
+popup/item_3/text = "Dusuk"
+popup/item_3/id = 2
+popup/item_4/text = "Cok dusuk"
+popup/item_4/id = 3
+
+[connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]
+[connection signal="item_selected" from="window_size/window_size" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="fullscreen_or_windowed/fullscreen_or_windowed" to="." method="_on_fullscreen_or_windowed_item_selected"]

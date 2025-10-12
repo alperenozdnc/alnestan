@@ -23,3 +23,6 @@ func stop_stream():
 func set_tempo(n: float = 1):
 	self.pitch_scale = n;
 
+
+func set_volume(n: float):
+	self.volume_db = n;

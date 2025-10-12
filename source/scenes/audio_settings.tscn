@@ -1,0 +1,150 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3bwq1g5yquka"]
+
+[ext_resource type="Script" uid="uid://ctqualo88n7a" path="res://scripts/volume.gd" id="1_7rsd2"]
+
+[node name="audio_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7rsd2")
+
+[node name="bg_color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0, 0, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -541.0
+offset_top = 26.0
+offset_right = -444.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Ses"
+
+[node name="master" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="master" type="HSlider" parent="master"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 433.68002
+offset_top = 204.59998
+offset_right = 830.2062
+offset_bottom = 220.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = -40.0
+max_value = 0.0
+step = 0.1
+script = ExtResource("1_7rsd2")
+
+[node name="label" type="Label" parent="master"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 402.0
+offset_bottom = 234.0
+text = "Genel"
+
+[node name="sfx" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 43.0
+offset_right = 40.0
+offset_bottom = 83.0
+
+[node name="sfx" type="HSlider" parent="sfx"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 433.68002
+offset_top = 204.59998
+offset_right = 830.2062
+offset_bottom = 220.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = -40.0
+max_value = 0.0
+step = 0.1
+script = ExtResource("1_7rsd2")
+
+[node name="label" type="Label" parent="sfx"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 418.0
+offset_bottom = 234.0
+text = "Efektler"
+
+[node name="bgm" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 84.0
+offset_right = 40.0
+offset_bottom = 124.0
+
+[node name="bgm" type="HSlider" parent="bgm"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 433.68002
+offset_top = 204.59998
+offset_right = 830.2062
+offset_bottom = 220.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = -40.0
+max_value = 0.0
+step = 0.1
+script = ExtResource("1_7rsd2")
+
+[node name="label" type="Label" parent="bgm"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 427.0
+offset_bottom = 234.0
+text = "Arkaplan"
+
+[node name="button_go_back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 43.0
+offset_right = 1097.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Geri"
+
+[connection signal="value_changed" from="master/master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="sfx/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="bgm/bgm" to="." method="_on_bgm_value_changed"]
+[connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]

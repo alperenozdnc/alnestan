@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cokettxxx5ae2"]
+[gd_scene load_steps=2 format=3 uid="uid://cokettxxx5ae2"]
 
-[sub_resource type="Theme" id="Theme_owc20"]
-
-[sub_resource type="SystemFont" id="SystemFont_05p07"]
+[ext_resource type="Script" uid="uid://bpo1apwd8t32j" path="res://scripts/settings_menu.gd" id="1_05p07"]
 
 [node name="settings_menu" type="Control"]
 layout_mode = 3
@@ -11,31 +9,71 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_05p07")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg_color" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.21484375, 0, 0, 1)
+color = Color(0.23921569, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
-offset_top = -55.0
-offset_right = 155.0
-offset_bottom = 55.0
+offset_left = -261.0
+offset_top = -25.0
+offset_right = 300.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_owc20")
-theme_type_variation = &"HeaderLarge"
-theme_override_fonts/font = SubResource("SystemFont_05p07")
-theme_override_font_sizes/font_size = 80
-text = "Settings"
+theme_override_constants/separation = 30
+
+[node name="button_audio" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ses"
+
+[node name="button_video" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Video"
+
+[node name="button_gameplay" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Oynanis"
+
+[node name="button_lang" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Dil"
+
+[node name="button_go_back" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Geri"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -105.0
+offset_top = 152.0
+offset_right = 105.0
+offset_bottom = 235.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Ayarlar"

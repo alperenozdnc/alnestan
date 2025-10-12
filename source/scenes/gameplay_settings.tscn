@@ -1,0 +1,113 @@
+[gd_scene load_steps=2 format=3 uid="uid://yxrxhvs2kan1"]
+
+[ext_resource type="Script" uid="uid://bh8rd5ipkw7a5" path="res://scripts/gameplay_settings.gd" id="1_d3vb4"]
+
+[node name="gameplay_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d3vb4")
+
+[node name="bg_color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0, 0, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -528.0
+offset_top = 26.0
+offset_right = -292.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Oynanis"
+
+[node name="button_go_back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 43.0
+offset_right = 1097.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Geri"
+
+[node name="text_speed" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="master" type="HSlider" parent="text_speed"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 433.68002
+offset_top = 204.59998
+offset_right = 830.2062
+offset_bottom = 220.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = 0.01
+max_value = 4.0
+step = 0.1
+value = 1.01
+
+[node name="label" type="Label" parent="text_speed"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 402.0
+offset_bottom = 234.0
+text = "Yazi hizi"
+
+[node name="gui_size" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 43.0
+offset_right = 40.0
+offset_bottom = 83.0
+
+[node name="master" type="HSlider" parent="gui_size"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38300002
+anchor_top = 0.335
+anchor_right = 0.70900005
+anchor_bottom = 0.34600002
+offset_left = 431.68
+offset_top = 217.59998
+offset_right = 828.2062
+offset_bottom = 233.335
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4869973, 0.61234206)
+min_value = 0.01
+max_value = 4.0
+step = 0.1
+value = 1.01
+
+[node name="label" type="Label" parent="gui_size"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 211.0
+offset_right = 402.0
+offset_bottom = 234.0
+text = "Arayuz
+boyutu"
+
+[connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]

@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 alnestan="*res://scripts/init.gd"
 
+[display]
+
+window/size/mode=3
+
 [input]
 
 move_left={

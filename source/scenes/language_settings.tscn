@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwptsik5u0loi"]
+
+[ext_resource type="Script" uid="uid://bgwx6tv2x74el" path="res://scripts/language_settings.gd" id="1_mx78k"]
+
+[node name="language_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx78k")
+
+[node name="bg_color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23921569, 0, 0, 1)
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -529.0
+offset_top = 26.0
+offset_right = -366.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Dil"
+
+[node name="button_go_back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1029.0
+offset_top = 43.0
+offset_right = 1097.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Geri"
+
+[node name="languages_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -65.0
+offset_right = 72.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="turkish" type="Button" parent="languages_container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Turkce"
+
+[node name="english" type="Button" parent="languages_container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "English"
+
+[connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]
+[connection signal="pressed" from="languages_container/turkish" to="." method="_on_turkish_pressed"]
+[connection signal="pressed" from="languages_container/english" to="." method="_on_english_pressed"]
