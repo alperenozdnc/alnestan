@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Detective Game"
+config/name="alnestan"
 run/main_scene="uid://djpytwi48f142"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
