@@ -34,20 +34,23 @@ func _hover_action() -> void:
 
 
 func _show_audio_menu() -> void:
-	alnestan.scenes.load_scene("audio_settings", "gui");
+	alnestan.scenes.load_scene("audio_settings", "gui", false);
 
 
 func _show_video_menu() -> void:
-	alnestan.scenes.load_scene("video_settings", "gui");
+	alnestan.scenes.load_scene("video_settings", "gui", false);
 
 
 func _show_gameplay_menu() -> void:
-	alnestan.scenes.load_scene("gameplay_settings", "gui");
+	alnestan.scenes.load_scene("gameplay_settings", "gui", false);
 
 
 func _show_language_menu() -> void:
-	alnestan.scenes.load_scene("language_settings", "gui");
+	alnestan.scenes.load_scene("language_settings", "gui", false);
 
 	
 func _go_back() -> void:
-	alnestan.scenes.load_scene("main_menu", "gui");
+	if alnestan.paused:
+		alnestan.scenes.unload_scene();	
+	else:
+		alnestan.scenes.load_scene("main_menu", "gui");

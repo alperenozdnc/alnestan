@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name game_player extends CharacterBody3D
 
 var can_move : bool = true;
 var has_gravity : bool = true;
@@ -34,6 +34,7 @@ func _ready() -> void:
 	look_rotation.y = rotation.y;
 	look_rotation.x = head.rotation.x;
 
+	alnestan.player = self;
 
 func _input(event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

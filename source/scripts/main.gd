@@ -4,12 +4,15 @@ class_name scene_handler extends Node
 @onready var world_2d: Node2D = $world_2d;
 @onready var world_3d: Node3D = $world_3d;
 
-var curr_scene: Node
+var curr_scene: Node;
+
+var current: String;
 
 func _ready():
 	alnestan.scenes = self;
 
 	load_scene("main_menu", "gui");
+
 
 func unload_scene():
 	if is_instance_valid(curr_scene):
@@ -18,7 +21,7 @@ func unload_scene():
 	curr_scene = null;
 
 
-func load_scene(scene: String, frame: String):
+func load_scene(scene: String, frame: String, is_new_parent: bool = true):
 	unload_scene();
 
 	var res_path: String = "res://scenes/%s.tscn" % scene;
@@ -28,6 +31,9 @@ func load_scene(scene: String, frame: String):
 	if (res):
 		curr_scene = res.instantiate();
 		frame_node.add_child(curr_scene);	
+
+		if is_new_parent:
+			current = scene;	
 
 
 func _find_frame(label: String):
