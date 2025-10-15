@@ -2,7 +2,6 @@ extends Control
 
 func _ready():
 	var fullscreen_or_windowed: OptionButton = %fullscreen_or_windowed;
-	var window_size_option: OptionButton = %window_size;
 
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		fullscreen_or_windowed.selected = 0;
