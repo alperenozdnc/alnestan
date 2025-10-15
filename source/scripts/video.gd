@@ -20,7 +20,6 @@ func _on_fullscreen_or_windowed_item_selected(idx: int) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED);
 
 
-
 func _on_option_button_item_selected(idx: int) -> void:
 	match idx:
 		0:
