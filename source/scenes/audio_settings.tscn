@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3bwq1g5yquka"]
 
-[ext_resource type="Script" uid="uid://ctqualo88n7a" path="res://scripts/volume.gd" id="1_7rsd2"]
+[ext_resource type="Script" uid="uid://ctqualo88n7a" path="res://scripts/menus/settings/volume.gd" id="1_7rsd2"]
 
 [node name="audio_settings" type="Control"]
 layout_mode = 3

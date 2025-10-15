@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwptsik5u0loi"]
 
-[ext_resource type="Script" uid="uid://bgwx6tv2x74el" path="res://scripts/language_settings.gd" id="1_mx78k"]
+[ext_resource type="Script" uid="uid://bgwx6tv2x74el" path="res://scripts/menus/settings/language_settings.gd" id="1_mx78k"]
 
 [node name="language_settings" type="Control"]
 layout_mode = 3
