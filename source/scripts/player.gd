@@ -10,15 +10,6 @@ var base_speed : float = 5.85;
 var jump_velocity : float = 3.5;
 var sprint_speed : float = 8;
 
-var keys = {
-	"left": "move_left",
-	"right": "move_right",
-	"forward": "move_forward",
-	"back": "move_back",
-	"jump": "ui_accept",
-	"sprint": "sprint",
-};
-
 var mouse_captured: bool = false;
 var look_rotation: Vector2;
 var move_speed: float = 0.0;
@@ -53,8 +44,8 @@ func _input(event: InputEvent) -> void:
 
 		if event.is_action(curr_action):
 			var movement_actions = [
-				keys["left"], keys["right"],
-				keys["forward"], keys["back"]
+				alnestan.keybindings["left"], alnestan.keybindings["right"],
+				alnestan.keybindings["forward"], alnestan.keybindings["back"]
 			];
 
 			var is_movement_action = movement_actions.has(curr_action);
@@ -84,12 +75,12 @@ func _physics_process(delta: float) -> void:
 		alnestan.audio.sfx.play_stream("steps");
 
 	if can_jump:
-		if Input.is_action_just_pressed(keys["jump"]) and is_on_floor():
+		if Input.is_action_just_pressed(alnestan.keybindings["jump"]) and is_on_floor():
 			velocity.y = jump_velocity;
 			did_jump_previously = true;
 			alnestan.audio.sfx.stop_stream();
 
-	if can_sprint and Input.is_action_pressed(keys["sprint"]):
+	if can_sprint and Input.is_action_pressed(alnestan.keybindings["sprint"]):
 		move_speed = sprint_speed;
 
 		if pressed_movement_key_count > 0:
@@ -102,10 +93,10 @@ func _physics_process(delta: float) -> void:
 	
 	if can_move:
 		var input_dir := Input.get_vector(
-			keys["left"],
-			keys["right"],
-			keys["forward"],
-			keys["back"],
+			alnestan.keybindings["left"],
+			alnestan.keybindings["right"],
+			alnestan.keybindings["forward"],
+			alnestan.keybindings["back"],
 		);
 
 		var move_dir := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized();
