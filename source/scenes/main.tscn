@@ -32,3 +32,4 @@ script = ExtResource("4_jyhfs")
 [node name="pause_menu_wrapper" type="CanvasLayer" parent="."]
 
 [node name="pause_menu" parent="pause_menu_wrapper" instance=ExtResource("5_tbgi4")]
+visible = false
