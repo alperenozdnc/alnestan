@@ -48,7 +48,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="master" type="HSlider" parent="brightness"]
+[node name="brightness" type="HSlider" parent="brightness"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -149,7 +149,8 @@ offset_right = 482.0
 offset_bottom = 283.0
 text = "Grafik kalitesi"
 
-[node name="OptionButton" type="OptionButton" parent="graphics_quality"]
+[node name="graphics_quality" type="OptionButton" parent="graphics_quality"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 531.0
 offset_top = 255.0
@@ -160,14 +161,16 @@ item_count = 5
 popup/item_0/text = "Cok yuksek"
 popup/item_0/id = 4
 popup/item_1/text = "Yuksek"
-popup/item_1/id = 0
+popup/item_1/id = 3
 popup/item_2/text = "Orta"
-popup/item_2/id = 1
+popup/item_2/id = 2
 popup/item_3/text = "Dusuk"
-popup/item_3/id = 2
+popup/item_3/id = 1
 popup/item_4/text = "Cok dusuk"
-popup/item_4/id = 3
+popup/item_4/id = 0
 
 [connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]
+[connection signal="value_changed" from="brightness/brightness" to="." method="_on_brightness_value_changed"]
 [connection signal="item_selected" from="window_size/window_size" to="." method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="fullscreen_or_windowed/fullscreen_or_windowed" to="." method="_on_fullscreen_or_windowed_item_selected"]
+[connection signal="item_selected" from="graphics_quality/graphics_quality" to="." method="_on_graphics_quality_item_selected"]

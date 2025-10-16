@@ -48,7 +48,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="master" type="HSlider" parent="text_speed"]
+[node name="text_speed_slider" type="HSlider" parent="text_speed"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -82,7 +82,8 @@ offset_top = 43.0
 offset_right = 40.0
 offset_bottom = 83.0
 
-[node name="master" type="HSlider" parent="gui_size"]
+[node name="gui_size_slider" type="HSlider" parent="gui_size"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.38300002
@@ -111,3 +112,5 @@ text = "Arayuz
 boyutu"
 
 [connection signal="pressed" from="button_go_back" to="." method="_on_button_go_back_pressed"]
+[connection signal="value_changed" from="text_speed/text_speed_slider" to="." method="_on_text_speed_changed"]
+[connection signal="value_changed" from="gui_size/gui_size_slider" to="." method="_on_gui_size_changed"]

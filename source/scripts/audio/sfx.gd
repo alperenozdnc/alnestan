@@ -4,6 +4,7 @@ var current_stream: String;
 
 func _ready() -> void:
 	alnestan.audio.sfx = self;
+	self.volume_db = alnestan.settings["audio_level"]["sfx"];
 
 func play_stream(filename: String):
 	var path := "res://sounds/sfx/%s.mp3" % filename;
@@ -26,3 +27,4 @@ func set_tempo(n: float = 1):
 
 func set_volume(n: float):
 	self.volume_db = n;
+	alnestan.settings["audio_level"]["sfx"] = n;
