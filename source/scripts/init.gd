@@ -17,5 +17,3 @@ var keybindings = {
 };
 
 var audio: Dictionary = {};
-var sfx: sfx_node;
-var bgm: bgm_node;
