@@ -6,6 +6,7 @@ func _ready() -> void:
 	alnestan.audio.bgm = self;
 	self.volume_db = alnestan.settings["audio_level"]["bgm"];
 
+
 func play_stream(filename: String):
 	var path := "res://sounds/bg/%s.mp3" % filename;
 
