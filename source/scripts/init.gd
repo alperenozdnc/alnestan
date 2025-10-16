@@ -31,6 +31,14 @@ var settings := {
 		"window_size": Vector2i(1920, 1080),
 		"screen_type": DisplayServer.WINDOW_MODE_FULLSCREEN,
 		"graphics_quality": GRAPHICS_SETTINGS.VERY_HIGH
+	},
+	"keybindings": {
+		"left": "move_left",
+		"right": "move_right",
+		"forward": "move_forward",
+		"back": "move_back",
+		"jump": "ui_accept",
+		"sprint": "sprint",
 	}
 };
 
@@ -41,14 +49,5 @@ var scenes: scene_handler;
 var transitioner: transition_screen;
 
 var player: game_player;
-
-var keybindings = {
-	"left": "move_left",
-	"right": "move_right",
-	"forward": "move_forward",
-	"back": "move_back",
-	"jump": "ui_accept",
-	"sprint": "sprint",
-};
 
 var audio: Dictionary = {};
