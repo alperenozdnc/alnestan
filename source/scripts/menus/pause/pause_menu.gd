@@ -1,6 +1,7 @@
 extends Control
 
 @onready var animation: AnimationPlayer = %animation
+@onready var overlay: CanvasLayer = %overlay
 
 const BLACKLIST = ["main_menu", "settings_menu"]
 
@@ -8,6 +9,7 @@ const BLACKLIST = ["main_menu", "settings_menu"]
 func _ready():
 	animation.play("RESET")
 	self.visible = false
+	overlay.visible = false
 
 
 func _process(_delta):
@@ -20,6 +22,7 @@ func _process(_delta):
 
 func resume():
 	self.visible = false
+	overlay.visible = false
 	get_tree().paused = false
 
 	animation.play_backwards("blur")
@@ -33,6 +36,7 @@ func pause():
 		return
 
 	self.visible = true
+	overlay.visible = true
 	get_tree().paused = true
 	alnestan.paused = true
 

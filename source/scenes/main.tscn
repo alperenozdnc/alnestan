@@ -29,7 +29,5 @@ script = ExtResource("3_jyhfs")
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 script = ExtResource("4_jyhfs")
 
-[node name="pause_menu_wrapper" type="CanvasLayer" parent="."]
-
-[node name="pause_menu" parent="pause_menu_wrapper" instance=ExtResource("5_tbgi4")]
+[node name="pause_menu" parent="." instance=ExtResource("5_tbgi4")]
 visible = false
