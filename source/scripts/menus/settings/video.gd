@@ -15,7 +15,7 @@ func _ready():
 
 
 func _on_button_go_back_pressed():
-	alnestan.scenes.load_scene("settings_menu", "gui");
+	alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI);
 
 
 func _on_fullscreen_or_windowed_item_selected(idx: int):

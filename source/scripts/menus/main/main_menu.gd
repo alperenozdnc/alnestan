@@ -38,15 +38,15 @@ func _hover_action() -> void:
 
 
 func _continue_game() -> void:
-	alnestan.scenes.load_scene("test", "3d");
+	alnestan.scenes.load_scene("test", alnestan.FRAMES["3D"]);
 
 
 func _start_new_game() -> void:
-	alnestan.scenes.load_scene("test", "3d");
+	alnestan.scenes.load_scene("test", alnestan.FRAMES["3D"]);
 
 	
 func _show_settings() -> void:
-	alnestan.scenes.load_scene("settings_menu", "gui");
+	alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI);
 
 
 func _exit_game() -> void:

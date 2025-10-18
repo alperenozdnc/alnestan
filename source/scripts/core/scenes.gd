@@ -11,7 +11,7 @@ var current: String;
 func _ready():
 	alnestan.scenes = self;
 
-	load_scene("main_menu", "gui");
+	load_scene("main_menu", alnestan.FRAMES.GUI);
 
 
 func unload_scene():
@@ -37,12 +37,19 @@ func load_scene(scene: String, frame: String, is_new_parent: bool = true):
 
 
 func _find_frame(label: String):
-	if label == "gui":
-		return gui;
-	elif label == "2d":
-		return world_2d;
-	elif label == "3d":
-		return world_3d;
+	var frame = null;
+
+	match label:
+		"gui":
+			frame = gui;
+		"2d":
+			frame = world_2d;
+		"3d":
+			frame = world_3d;
+	
+	assert(frame != null, "error: invalid scene frame: %s" % label);
+	
+	return frame;
 
 
 func _on_transition_screen_transitioned() -> void:

@@ -44,12 +44,12 @@ func _on_resume_pressed():
 
 
 func _on_settings_pressed() -> void:
-	await alnestan.scenes.load_scene("settings_menu", "gui");
+	await alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI);
 	resume();
 
 
 func _on_menu_pressed() -> void:
-	alnestan.scenes.load_scene("main_menu", "gui");
+	alnestan.scenes.load_scene("main_menu", alnestan.FRAMES.GUI);
 	resume();
 
 

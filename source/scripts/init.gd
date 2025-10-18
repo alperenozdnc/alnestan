@@ -1,5 +1,11 @@
 extends Node
 
+var FRAMES = {
+	"3D": "3d",
+	"2D": "2d",
+	"GUI": "gui",
+};
+
 var SCREEN_SIZES = [
 	Vector2i(1920, 1080),
 	Vector2i(1280, 720),

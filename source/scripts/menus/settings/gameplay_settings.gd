@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_button_go_back_pressed() -> void:
-	alnestan.scenes.load_scene("settings_menu", "gui");
+	alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI);
 
 
 func _on_gui_size_changed(value: float) -> void:
