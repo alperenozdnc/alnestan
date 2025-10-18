@@ -1,35 +1,36 @@
 class_name bgm_node extends AudioStreamPlayer
 
-var current_stream: String;
+var current_stream: String
+
 
 func _ready() -> void:
-	alnestan.audio.bgm = self;
-	self.volume_db = alnestan.settings["audio_level"]["bgm"];
+	alnestan.audio.bgm = self
+	self.volume_db = alnestan.settings["audio_level"]["bgm"]
 
 
 func play_stream(filename: String):
-	var path := "res://sounds/bg/%s.mp3" % filename;
+	var path := "res://sounds/bg/%s.mp3" % filename
 
 	if not ResourceLoader.exists(path):
-		push_error("%s sound file does not exist on disk", path);
-		return;
+		push_error("%s sound file does not exist on disk", path)
+		return
 
-	self.stream = load(path);
-	self.play();
+	self.stream = load(path)
+	self.play()
 
 
 func stop_stream():
-	var tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE);
-	var duration_sec = 2.00;
-	var final_value = -80;
+	var tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	var duration_sec = 2.00
+	var final_value = -80
 
-	tween.tween_property(self, "volume_db", final_value, duration_sec);
+	tween.tween_property(self, "volume_db", final_value, duration_sec)
 
 
 func set_tempo(n: float = 1):
-	self.pitch_scale = n;
+	self.pitch_scale = n
 
 
 func set_volume(n: float):
-	self.volume_db = n;
-	alnestan.settings["audio_level"]["bgm"] = n;
+	self.volume_db = n
+	alnestan.settings["audio_level"]["bgm"] = n
