@@ -64,7 +64,3 @@ func _find_frame(label: String):
 	assert(frame != null, "error: invalid scene frame: %s" % label)
 
 	return frame
-
-
-func _on_transition_screen_transitioned() -> void:
-	pass  # Replace with function body.
