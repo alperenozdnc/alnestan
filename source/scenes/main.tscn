@@ -21,12 +21,6 @@ grow_vertical = 2
 
 [node name="world_2d" type="Node2D" parent="."]
 
-[node name="pause_menu" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="transitioner" parent="." instance=ExtResource("2_0wfyh")]
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
