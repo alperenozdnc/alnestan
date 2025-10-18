@@ -33,7 +33,7 @@ func _on_bgm_value_changed(value: float) -> void:
 
 
 func _on_button_go_back_pressed() -> void:
-	alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI)
+	alnestan.scenes.load_scene("settings_menu", alnestan.FRAMES.GUI_NI, false)
 
 
 func _mute_master_if_limit(value: float):
